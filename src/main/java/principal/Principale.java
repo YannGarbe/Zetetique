@@ -29,6 +29,11 @@ public class Principale {
     	System.out.println(ao.Analyse());
     }
     
+    /**
+     * Initialise une liste d'options pour analyser le texte
+     * @param texte le texte
+     * @return la liste d'options
+     */
     public static List <AnalyseOption> initOptions (String texte) {
     	List <AnalyseOption> liste = new ArrayList<AnalyseOption>();
     	liste.add(new AnalyseOptionBrute(texte));

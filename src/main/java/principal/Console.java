@@ -48,7 +48,7 @@ public class Console
 	
 	/**
 	 * Lit une chaîne de caractère écrite par l'utilisateur
-	 * @return
+	 * @return la chaîne de caractère enregistrée
 	 */
 	public static String readString () {
 		String rep = "";
