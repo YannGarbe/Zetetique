@@ -19,11 +19,9 @@ public class PDFManager {
    private String filePath;
    private File file;
 
-    public PDFManager() {
-        
-    }
-   public String ToText() throws IOException
-   {
+    public PDFManager() {}
+    
+   public String ToText() throws IOException {
        this.pdfStripper = null;
        this.pdDoc = null;
        this.cosDoc = null;

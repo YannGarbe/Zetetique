@@ -1,20 +1,39 @@
 package principal;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-import lecture.PDFManager;
+import analyse.*;
+import filters.*;
+import lecture.*;
+import toTexte.*;
 
 /**
- * Hello world!
- *
+ * Classe principale du projet, il contient le main
+ * @author Groupe de Zététique
+ * 
  */
-public class Principale 
-{
+public class Principale {
     public static void main(String[] args) throws IOException {
 
-        PDFManager pdfManager = new PDFManager();
-        pdfManager.setFilePath("Tests/CR.pdf");
-        System.out.println(pdfManager.ToText()); 
+    	FileChecker fc = new FileChecker(new FileNameFilterEndsPDF(), "Programmes"); 
+        String s = Console.choice(fc.getFiles());
+    	System.out.println(s);
+    	
+    	ToTexteFrom ttf = new ToTexteFromPDF(s);
+        
+    	System.out.println("Quelle analyse voulez-vous faire?");
+    	AnalyseOption ao = Console.choice(initOptions(ttf.getTexte()));
+    	
+    	System.out.println(ao.Analyse());
     }
     
+    public static List <AnalyseOption> initOptions (String texte) {
+    	List <AnalyseOption> liste = new ArrayList<AnalyseOption>();
+    	liste.add(new AnalyseOptionBrute(texte));
+    	liste.add(new AnalyseOptionLignes(texte));
+    	liste.add(new AnalyseOptionMot(texte));
+    	return liste;
+    }
 }

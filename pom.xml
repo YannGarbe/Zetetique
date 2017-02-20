@@ -14,14 +14,6 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
 
-  <repositories>
-   <repository>
-       <id>Librairies</id>
-       <name>Libs</name>
-       <url>file://${project.basedir}/Librairies/</url>
-   </repository>
-  </repositories>
-  
   <dependencies>
    <dependency>
       <groupId>junit</groupId>
@@ -29,18 +21,6 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-
-   <dependency>
-      <groupId>apache</groupId>
-      <artifactId>apache-ant</artifactId>
-      <version>1.8.2</version>
-   </dependency>
-
-   <dependency>
-      <groupId>pdfbox</groupId>
-      <artifactId>pdfbox-app</artifactId>
-      <version>2.0.4</version>
-   </dependency>
 
   </dependencies>
 
