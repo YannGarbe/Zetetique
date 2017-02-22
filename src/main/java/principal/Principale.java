@@ -6,6 +6,7 @@ import java.util.List;
 
 import analyse.*;
 import filters.*;
+import generalization.GeneralFile;
 import lecture.*;
 import toTexte.*;
 
@@ -17,15 +18,23 @@ import toTexte.*;
 public class Principale {
     public static void main(String[] args) throws IOException {
 
-    	FileChecker fc = new FileChecker(new FileNameFilterEndsPDF(), "Programmes"); 
-        String s = Console.choice(fc.getFiles());
-    	System.out.println(s);
+    	/*Création du gestionnaire de filtrage de fichiers*/
+    	FileChecker fc = new FileChecker("Programmes");
     	
-    	ToTexteFrom ttf = new ToTexteFromPDF(s);
+    	/*Section d'ajout de filtres pour les fichiers */
+    	fc.addFilter(new FileNameFilterEndsPDF(), new ToTextFromPDF());
+    	fc.addFilter(new FileNameFilterEndsTXT(), new ToTextFromTXT());
+    	/*Fin de la section*/
+    	
+    	/*Demande à l'utilisateur quel fichier il veut analyser*/
+        GeneralFile f = Console.choice(fc.getFiles());
+    	System.out.println(f);
         
+    	/*Demande à l'utilisateur quel analyse il veut faire*/
     	System.out.println("Quelle analyse voulez-vous faire?");
-    	AnalyseOption ao = Console.choice(initOptions(ttf.getTexte()));
+    	AnalyseOption ao = Console.choice(initOptions(f.getText()));
     	
+    	/*Affiche le résultat de l'analyse*/
     	System.out.println(ao.Analyse());
     }
     

@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.FilenameFilter;
 
 /**
- * Ce filtre de fichier permet de ne prendre que les fichier .pdf du Programme
+ * Ce filtre de fichier permet de ne prendre que les fichiers .pdf du Programme
  * @author Groupe de Zététique
  *
  */

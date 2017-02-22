@@ -9,15 +9,11 @@ import lecture.PDFManager;
  * @author Groupe de Zététique
  *
  */
-public class ToTexteFromPDF extends ToTexteFrom{
+public class ToTextFromPDF extends ToTextFrom{
 
-	public ToTexteFromPDF(String fichier) {
-		super(fichier);
-	}
-
-	public String getTexte() {
+	public String getText() {
 		PDFManager pdfManager = new PDFManager();
-		pdfManager.setFilePath("Programmes/"+fichier);
+		pdfManager.setFilePath(fichier);
 		try {
 			return pdfManager.ToText();
 		} catch (IOException e) {
