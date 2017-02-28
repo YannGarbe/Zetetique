@@ -22,6 +22,10 @@ public abstract class AnalyseOption<T> {
 	 */
 	public abstract String optionMain();
 	
+	/**
+	 * Effectue l'algorithme d'analyse
+	 * @return le retour de l'analyse
+	 */
 	public abstract T analyse();
 	
 	/**

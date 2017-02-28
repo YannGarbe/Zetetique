@@ -22,7 +22,7 @@ public class Principale {
         
     	/*Demande à l'utilisateur quel analyse il veut faire*/
     	System.out.println("Quelle analyse voulez-vous faire?");
-    	AnalyseOption ao = Console.choice(factory.OptionsFactory.initOptions(f.getText()));
+    	AnalyseOption<?> ao = Console.choice(factory.OptionsFactory.initOptions(f.getText()));
     	
     	/*Affiche le résultat de l'analyse*/
     	System.out.println(ao.optionMain());

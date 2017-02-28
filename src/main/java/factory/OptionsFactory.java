@@ -20,7 +20,8 @@ public class OptionsFactory {
      * @param texte le texte
      * @return la liste d'options
      */
-    public static List <AnalyseOption> initOptions (String texte) {
+    @SuppressWarnings("rawtypes")
+	public static List <AnalyseOption> initOptions (String texte) {
     	List <AnalyseOption> liste = new ArrayList<AnalyseOption>();
     	liste.add(new AnalyseOptionBrute(texte));
     	liste.add(new AnalyseOptionLignes(texte));
