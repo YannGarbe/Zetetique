@@ -5,18 +5,22 @@ package analyse;
  * @author Groupe de Zététique
  *
  */
-public class AnalyseOptionBrute extends AnalyseOption{
+public class AnalyseOptionBrute extends AnalyseOption<String>{
 
 	public AnalyseOptionBrute(String texte) {
 		super(texte);
 	}
 
-	public String getAnalyse() {
-		return this.texte;
+	public String optionMain() {
+		return analyse();
 	}
 
 	public String toString() {
 		return "Afficher entièrement le texte";
+	}
+
+	public String analyse() {
+		return this.texte;
 	}
 
 }

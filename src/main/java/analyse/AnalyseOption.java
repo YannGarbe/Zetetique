@@ -5,7 +5,7 @@ package analyse;
  * @author Groupe de Zététique
  *
  */
-public abstract class AnalyseOption {
+public abstract class AnalyseOption<T> {
 	protected String texte;
 	
 	/**
@@ -20,7 +20,9 @@ public abstract class AnalyseOption {
 	 * Analyse le texte en fonction de l'option
 	 * @return Le message de fin d'analyse
 	 */
-	public abstract String getAnalyse();
+	public abstract String optionMain();
+	
+	public abstract T analyse();
 	
 	/**
 	 * Affiche une description de l'option

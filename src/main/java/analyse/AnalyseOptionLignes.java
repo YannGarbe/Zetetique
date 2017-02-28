@@ -5,24 +5,28 @@ package analyse;
  * @author Groupe de Zététique
  *
  */
-public class AnalyseOptionLignes extends AnalyseOption {
+public class AnalyseOptionLignes extends AnalyseOption<Integer> {
 
 	public AnalyseOptionLignes(String texte) {
 		super(texte);
 	}
 
-	public String getAnalyse() {
+	public String optionMain() {
+		return "Le nombre de lignes de ce document est "+this.analyse()+".\n";
+	}
+
+	public String toString() {
+		return "Compter le nombre de lignes";
+	}
+
+	public Integer analyse() {
 		int nbLigne = 0;
 		
 		for (int i = 0 ; i < texte.length() ; i++) {
 			if (texte.charAt(i) == '\n')
 				nbLigne ++;
 		}
-		return "Le nombre de lignes de ce document est "+nbLigne+".\n";
-	}
-
-	public String toString() {
-		return "Compter le nombre de lignes";
+		return nbLigne;
 	}
 	
 	

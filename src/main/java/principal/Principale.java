@@ -25,6 +25,6 @@ public class Principale {
     	AnalyseOption ao = Console.choice(factory.OptionsFactory.initOptions(f.getText()));
     	
     	/*Affiche le résultat de l'analyse*/
-    	System.out.println(ao.getAnalyse());
+    	System.out.println(ao.optionMain());
     }
 }
