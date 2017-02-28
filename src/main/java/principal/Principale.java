@@ -20,11 +20,17 @@ public class Principale {
         GeneralFile f = Console.choice(fc.getFiles());
     	System.out.println(f);
         
+    	do {
     	/*Demande à l'utilisateur quel analyse il veut faire*/
-    	System.out.println("Quelle analyse voulez-vous faire?");
+    	System.out.println("\nQuelle analyse voulez-vous faire?");
     	AnalyseOption<?> ao = Console.choice(factory.OptionsFactory.initOptions(f.getText()));
     	
     	/*Affiche le résultat de l'analyse*/
     	System.out.println(ao.optionMain());
+    	System.out.println("---------------------------------------------------");
+    	
+    	
+    	System.out.println("Souhaitez-vous faire une autre analyse de ce texte?");
+    	} while (Console.YesNo());
     }
 }

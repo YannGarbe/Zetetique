@@ -3,10 +3,7 @@ package factory;
 import java.util.ArrayList;
 import java.util.List;
 
-import analyse.AnalyseOption;
-import analyse.AnalyseOptionBrute;
-import analyse.AnalyseOptionLignes;
-import analyse.AnalyseOptionMot;
+import analyse.*;
 
 /**
  * Cette classe factory initialise une liste d'option (qui pourra être mise à jour pour chaque nouvelle option)
@@ -26,6 +23,7 @@ public class OptionsFactory {
     	liste.add(new AnalyseOptionBrute(texte));
     	liste.add(new AnalyseOptionLignes(texte));
     	liste.add(new AnalyseOptionMot(texte));
+    	liste.add(new AnalyseOptionAssociation(texte));
     	return liste;
     }
 }

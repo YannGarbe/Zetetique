@@ -3,13 +3,14 @@ package principal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 
 /**
- * Ensemble de méthodes sur des chaînes de caractères.
+ * Ensemble de méthodes outils.
  * @author Groupe de Zetetique
  *
  */
-public class StringTools {
+public class Tools {
 		
 	/**
 	 * Fusionne deux listes. Les doublons ne sont pas inclus.
@@ -38,5 +39,14 @@ public class StringTools {
 	public static List<String> splitWordsToList (String s) {
 		String [] words = s.split("[[ ]*|[,]*|[\\.]*|[:]*|[/]*|[!]*|[?]*|[+]*]+");
 		return Arrays.asList(words);
+	}
+	
+	/**
+	 * Cette méthode enlève les mots parasites présents dans la map de mots
+	 * @param map la map à analyser
+	 * @return la map nettoyée
+	 */
+	public static Map<String, Integer> removeBugs(Map<String, Integer> map) {
+		return map;
 	}
 }

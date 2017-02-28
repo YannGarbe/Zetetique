@@ -39,7 +39,7 @@ public class PDFManager {
        
        // reading text from page 1 to 10
        // if you want to get text from full pdf file use this code
-       // pdfStripper.setEndPage(pdDoc.getNumberOfPages());
+       //pdfStripper.setEndPage(pdDoc.getNumberOfPages());
        
        Text = pdfStripper.getText(pdDoc);
        return Text;

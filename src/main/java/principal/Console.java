@@ -1,7 +1,10 @@
 package principal;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 /**
@@ -27,6 +30,16 @@ public class Console
 	}
 	
 	/**
+	 * Permet de demander un choix oui/non à l'utilisateur
+	 * @return true si oui, false si faux
+	 */
+	public static boolean YesNo() {
+		List<String> l = new ArrayList<String>();
+		l.add("Oui");
+		l.add("Non");
+		return choice(l).equals("Oui");
+	}
+	/**10
 	 * read an integer from 0 (included) to n (excluded) from standard input
 	 * input is repeated as long as it is not correct
 	 * 
@@ -54,6 +67,39 @@ public class Console
 		String rep = "";
 		while (rep.equals("")) {
 			rep = scanner.nextLine();
+		}
+		return rep;
+	}
+	
+	/**
+	 * Permet un affichage plus élégant d'une map
+	 * @param map la map à afficher
+	 * @return la chaîne de caractère d'affichage
+	 */
+	public static String printMap(Map<String, Integer> map) {
+		String rep = "";
+		List<Integer> ln = new ArrayList<Integer>();
+		
+		/*Récupération des valeurs*/
+		for(Integer i : map.values()) {
+			ln.add(i);
+		}
+		/*On trie la listr*/
+		Collections.sort(ln);
+		Collections.reverse(ln);
+		
+		int i = 0;
+		int cpt = 0;
+		while (i < ln.size() && cpt < 5) {
+			Integer j = new Integer(ln.get(i));
+			for(String o : map.keySet()) {
+				if(j.equals(map.get(o)) && cpt < 5 ) {
+					rep+= "[ '"+o+"' : "+j+" ]\n";
+					map.replace(o, -1);
+					cpt++;
+				}
+			}
+			i++;
 		}
 		return rep;
 	}
