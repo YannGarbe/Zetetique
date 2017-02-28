@@ -20,7 +20,7 @@ public abstract class AnalyseOption {
 	 * Analyse le texte en fonction de l'option
 	 * @return Le message de fin d'analyse
 	 */
-	public abstract String Analyse();
+	public abstract String getAnalyse();
 	
 	/**
 	 * Affiche une description de l'option

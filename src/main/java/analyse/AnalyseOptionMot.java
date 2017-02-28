@@ -1,6 +1,7 @@
 package analyse;
 
 import principal.Console;
+import values.Value;
 
 /**
  * Cette option permet de compte le nombre d'occurrence d'un certain mot
@@ -13,7 +14,7 @@ public class AnalyseOptionMot extends AnalyseOption{
 		super(texte);
 	}
 
-	public String Analyse() {
+	public String getAnalyse() {
 		int nbOcc = 0;
 		
 		System.out.println("Quel mot voulez-vous rechercher?");
@@ -29,6 +30,10 @@ public class AnalyseOptionMot extends AnalyseOption{
 
 	public String toString() {
 		return "Rechercher le nombre d'occurence d'un certain mot";
+	}
+
+	public Value Analyse() {
+		return null;
 	}
 
 }

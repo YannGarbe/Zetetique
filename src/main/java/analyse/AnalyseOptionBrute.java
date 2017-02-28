@@ -11,11 +11,10 @@ public class AnalyseOptionBrute extends AnalyseOption{
 		super(texte);
 	}
 
-	public String Analyse() {
-		return texte;
+	public String getAnalyse() {
+		return this.texte;
 	}
 
-	@Override
 	public String toString() {
 		return "Afficher entièrement le texte";
 	}

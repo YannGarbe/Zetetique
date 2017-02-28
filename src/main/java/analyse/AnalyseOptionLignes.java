@@ -11,7 +11,7 @@ public class AnalyseOptionLignes extends AnalyseOption {
 		super(texte);
 	}
 
-	public String Analyse() {
+	public String getAnalyse() {
 		int nbLigne = 0;
 		
 		for (int i = 0 ; i < texte.length() ; i++) {
