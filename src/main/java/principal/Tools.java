@@ -47,6 +47,16 @@ public class Tools {
 	 * @return la map nettoyée
 	 */
 	public static Map<String, Integer> removeBugs(Map<String, Integer> map) {
+		/*
+		for(Map.Entry<String, Integer> entry : map.entrySet()){
+			tmpMot = entry.getKey();
+			tmpInt = entry.getValue();
+			if(tmpInt <= 1 
+					|| tmpMot.matches("le|la|les|un|uns|une|unes|de|des|du|a|à|au|aux")){
+				map.remove(tmpMot);
+			}
+		}
+		*/
 		return map;
 	}
 }
