@@ -23,7 +23,7 @@ Auteurs :
 	- Petites amélioration de lecture de fichiers .txt.
 	- Quelques commentaires pour rendre le code plus explicite.
 
-*DONE : 
+* DONE : 
 	- Une conception de projet potable, permettant l'implémentation de code relativement ludique. 
 	- Une bonne partie de la javadoc (le reste est relativement explicite).
 	- Les Filtres : 
