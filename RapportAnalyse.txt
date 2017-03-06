@@ -1,0 +1,24 @@
+Pour le cas de CR.txt:
+[France] : 
+
+
+[Politique] : 
+
+
+Pour le cas de Projet_LR_2017_complet.txt:
+[France] : 
+[ 'p' : 1 ]
+[ 'la' : 1 ]
+[ '(la' : 1 ]
+[ 'compte' : 1 ]
+
+
+[Politique] : 
+[ 'du' : 4 ]
+[ 'de' : 2 ]
+[ 'la' : 2 ]
+[ 'même' : 1 ]
+[ 'ligne' : 1 ]
+
+
+

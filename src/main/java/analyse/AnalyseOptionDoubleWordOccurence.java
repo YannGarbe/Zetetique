@@ -24,8 +24,6 @@ public class AnalyseOptionDoubleWordOccurence extends AnalyseOption<Map<String, 
 	public Map<String, Integer> analyse() {
 		List <String> liste = Tools.splitWordsToList(texte.toLowerCase());
 		String tmpMot, tmpPrec, tmpSuiv;
-		String tmpInt;
-		
 		for(int i=0; i < liste.size(); i++){
 			tmpMot = liste.get(i);
 			tmpPrec = liste.get(i - 1);

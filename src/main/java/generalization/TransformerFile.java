@@ -30,7 +30,7 @@ public class TransformerFile extends File {
 		GeneralFile [] tab = new GeneralFile[this.list(filtre).length];
 		
 		for (int i = 0 ; i < this.list(filtre).length ; i++) {
-			ttf.setFile(this.list(filtre)[i]);
+			ttf.setFile("LesPdf/"+this.list(filtre)[i]);
 			tab[i] = new GeneralFile (this.list(filtre)[i], ttf);
 		}
 		return tab;

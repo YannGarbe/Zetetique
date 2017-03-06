@@ -8,7 +8,6 @@ package toTexte;
 public abstract class ToTextFrom {
 
 	protected String fichier;
-
 	public ToTextFrom () {
 		
 	}
@@ -17,11 +16,11 @@ public abstract class ToTextFrom {
 	 * @param fichier le fichier choisi à analyser
 	 */
 	public ToTextFrom (String fichier) {
-		this.fichier = "Programmes/"+fichier;
+		this.fichier = "LesPdf/"+fichier;
 	}
 	
 	public void setFile (String fichier) {
-		this.fichier = "Programmes/"+fichier;
+		this.fichier = fichier;
 	}
 	/**
 	 * Permet de récupérer le texte du fichier

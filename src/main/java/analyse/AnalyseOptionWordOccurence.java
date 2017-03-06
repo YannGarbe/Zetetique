@@ -24,8 +24,6 @@ public class AnalyseOptionWordOccurence extends AnalyseOption<Map<String, Intege
 	public Map<String, Integer> analyse() {
 		List <String> liste = Tools.splitWordsToList(texte.toLowerCase());
 		String tmpMot;
-		Integer tmpInt;
-		
 		for(int i=0; i < liste.size(); i++){
 			tmpMot = liste.get(i);
 			if(!map.containsKey(tmpMot))

@@ -30,6 +30,14 @@ public class GeneralFile {
 		return this.ttf.getText();
 	}
 	
+	/**
+	 * Modifie le chemin d'analyse
+	 * @param path le nouveau chemin
+	 */
+	public void setPathAnalyse(String path) {
+		this.ttf.setFile(path);
+	}
+	
 	public String toString() {
 		return this.name;
 	}
