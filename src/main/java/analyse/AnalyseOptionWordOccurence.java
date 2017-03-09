@@ -22,7 +22,7 @@ public class AnalyseOptionWordOccurence extends AnalyseOption<Map<String, Intege
 
 	@Override
 	public Map<String, Integer> analyse() {
-		List <String> liste = Tools.splitWordsToList(texte.toLowerCase());
+		List <String> liste = Tools.removeUselessBugs(Tools.splitWordsToList(texte.toLowerCase()));
 		String tmpMot;
 		for(int i=0; i < liste.size(); i++){
 			tmpMot = liste.get(i);
@@ -30,10 +30,7 @@ public class AnalyseOptionWordOccurence extends AnalyseOption<Map<String, Intege
 				map.put(tmpMot, 1);
 			else 
 				map.replace(tmpMot, map.get(tmpMot)+1);
-			
 		}
-		
-		Tools.removeBugs(map);
 		return map;
 	}
 

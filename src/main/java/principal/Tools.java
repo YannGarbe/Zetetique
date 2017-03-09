@@ -42,21 +42,35 @@ public class Tools {
 	}
 	
 	/**
-	 * Cette méthode enlève les mots parasites présents dans la map de mots
+	 * Cette méthode enlève les mots parasites présents dans la liste de mots
+	 * @param liste la liste à analyser
+	 * @return la liste nettoyee
+	 */
+	public static List<String> removeUselessBugs(List<String> liste){
+		List<String> tmp = new ArrayList<String>();
+		for(int i=0; i < liste.size(); i++){
+			if(liste.get(i).matches("le|la|les|un|uns|une|unes|de|des|du|a|à|au|aux")){
+				tmp.add(liste.get(i));
+			}
+		}
+		return tmp;
+	}
+	
+	/**
+	 * Cette méthode enlève les mots présents 1 seule fois dans la map de mots 
 	 * @param map la map à analyser
 	 * @return la map nettoyée
 	 */
 	public static Map<String, Integer> removeBugs(Map<String, Integer> map) {
-		/*
+		String tmpMot;
+		Integer tmpInt;
 		for(Map.Entry<String, Integer> entry : map.entrySet()){
 			tmpMot = entry.getKey();
 			tmpInt = entry.getValue();
-			if(tmpInt <= 1 
-					|| tmpMot.matches("le|la|les|un|uns|une|unes|de|des|du|a|à|au|aux")){
+			if(tmpInt <= 1){
 				map.remove(tmpMot);
 			}
 		}
-		*/
 		return map;
 	}
 	
