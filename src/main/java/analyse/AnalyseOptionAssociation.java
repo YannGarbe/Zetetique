@@ -21,7 +21,7 @@ public class AnalyseOptionAssociation extends AnalyseOption<Map<String, Integer>
 		String mot = Console.readString();
 		
 		System.out.println("[ Mot : Nombre d'occurences]");
-		return Console.printMap(analyse(mot));
+		return Console.printMap(analyse(mot), 10);
 	}
 
 	public Map<String, Integer> analyse() {		

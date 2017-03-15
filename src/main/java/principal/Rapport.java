@@ -18,19 +18,34 @@ public class Rapport {
 	
 	public static void main (String [] args) {
 		
-		System.out.println("Début de l'analyse");
+		System.out.println("Début de l'analyse...");
 		FileChecker fc = factory.FileCheckerFactory.createReportFileChecker();
 		String rep = "";
-		
+		int cpt = 0;
+		/*---------------------------*/
 		AnalyseOptionAssociation assoc;
+		//AnalyseOptionWordOccurence wO;
+		/*---------------------------*/
+
 		for (GeneralFile f : fc.getFiles()) {
+			System.out.println("Fichier '"+f.toString()+"' \t ("+cpt+"/"+fc.getFiles().size()+")");
+			
 			f.setPathAnalyse("LesTxt/"+f);
-			rep += "Pour le cas de "+f.toString()+":\n";
+			//rep += "Pour le cas de "+f.toString()+":\n";
 			
+			/*-----------------------------------------------*/
 			assoc = new AnalyseOptionAssociation(f.getText());
-			rep += "[France] : \n"+Console.printMap(assoc.analyse("France"))+"\n\n";
+			//wO = new AnalyseOptionWordOccurence(f.getText());
+			/*-----------------------------------------------*/
 			
-			rep += "[Politique] : \n"+Console.printMap(assoc.analyse("Politique"))+"\n\n";
+			//rep += "[plus] : \n"+Console.printMap(  Tools.removeUselessMap((assoc.analyse("plus")) ), 10 )+"\n\n";
+			
+			rep += Console.printPythonMap(  Tools.removeUselessMap((assoc.analyse("plus")) ), 10,  f.toString().substring(0, f.toString().length()-4));
+			
+			//rep += "[Politique] : \n"+Console.printMap(assoc.analyse("Politique"))+"\n\n";
+			
+			//rep += Console.printMap( Tools.removeUselessMap(wO.analyse()), 10 )+"\n\n";
+			cpt++;
 		}
 		File f = new File ("RapportAnalyse.txt");
 		try {
@@ -41,5 +56,6 @@ public class Rapport {
 		} catch (IOException e) {
 			e.printStackTrace();
 		} 
+		System.out.println("("+cpt+"/"+fc.getFiles().size()+") Fin de l'analyse.");
 	}
 }

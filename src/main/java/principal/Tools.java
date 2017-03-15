@@ -2,6 +2,7 @@ package principal;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -72,6 +73,20 @@ public class Tools {
 			}
 		}
 		return map;
+	}
+	
+	/**
+	 * Méthode similiaire à removeUselessBugs mais sur une map
+	 * @param map l'ancienne map
+	 * @return la nouvelle map
+	 */
+	public static Map <String, Integer> removeUselessMap (Map <String, Integer> map) {
+		HashMap <String, Integer> rep = new HashMap <String, Integer>();
+		for (String s : map.keySet()) {
+			if (!Dictionnary.isWriggle(s) && Dictionnary.isFrench(s))
+				rep.put(s, map.get(s));
+		}
+		return rep;
 	}
 	
 }

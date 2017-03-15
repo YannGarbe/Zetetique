@@ -35,11 +35,11 @@ public class PDFManager {
        pdDoc = new PDDocument(cosDoc);
        pdDoc.getNumberOfPages();
        pdfStripper.setStartPage(1);
-       pdfStripper.setEndPage(10);
+       //pdfStripper.setEndPage(10);
        
        // reading text from page 1 to 10
        // if you want to get text from full pdf file use this code
-       //pdfStripper.setEndPage(pdDoc.getNumberOfPages());
+       pdfStripper.setEndPage(pdDoc.getNumberOfPages());
        
        Text = pdfStripper.getText(pdDoc);
        return Text;
