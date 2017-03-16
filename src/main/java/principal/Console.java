@@ -109,7 +109,7 @@ public class Console
 	 * @param map la map à afficher
 	 * @return la chaîne de caractère d'affichage
 	 */
-	public static String printMap(Map<String, Integer> map, int max) {
+	public static String printMap(Map<String, Integer> map, int max, int maxWord) {
 		String rep = "";
 		List<Integer> ln = new ArrayList<Integer>();
 		
@@ -128,7 +128,7 @@ public class Console
 			Integer j = new Integer(ln.get(i));
 			for(String o : map.keySet()) {
 				if(j.equals(map.get(o)) && cpt < max ) {
-					rep+= "[ '"+o+"' : "+j+" ]\n";
+					rep+= "[ '"+o+"' : "+j+" ("+(max*10000)/maxWord+"%°°) ]\n";
 					map.replace(o, -1);
 					cpt++;
 				}

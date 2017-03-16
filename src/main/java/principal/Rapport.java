@@ -23,28 +23,33 @@ public class Rapport {
 		String rep = "";
 		int cpt = 0;
 		/*---------------------------*/
-		AnalyseOptionAssociation assoc;
+		//AnalyseOptionAssociation assoc;
 		//AnalyseOptionWordOccurence wO;
+		AnalyseOptionDoubleWordOccurence dwO;
 		/*---------------------------*/
 
 		for (GeneralFile f : fc.getFiles()) {
-			System.out.println("Fichier '"+f.toString()+"' \t ("+cpt+"/"+fc.getFiles().size()+")");
+			System.out.println("Fichier '"+f.toString()+"' \t\t ("+cpt+"/"+fc.getFiles().size()+")");
 			
 			f.setPathAnalyse("LesTxt/"+f);
-			//rep += "Pour le cas de "+f.toString()+":\n";
+			rep += "Pour le cas de "+f.toString()+":\n";
 			
 			/*-----------------------------------------------*/
-			assoc = new AnalyseOptionAssociation(f.getText());
+			//assoc = new AnalyseOptionAssociation(f.getText());
 			//wO = new AnalyseOptionWordOccurence(f.getText());
+			dwO = new AnalyseOptionDoubleWordOccurence(f.getText());
 			/*-----------------------------------------------*/
 			
-			//rep += "[plus] : \n"+Console.printMap(  Tools.removeUselessMap((assoc.analyse("plus")) ), 10 )+"\n\n";
+			//rep += "[plus] (Sur "+ Tools.getMaxWords(f.getText())+" mots): \n"+Console.printMap(  Tools.removeUselessMap((assoc.analyse("plus")) ), 10, Tools.getMaxWords(f.getText()) )+"\n\n";
 			
-			rep += Console.printPythonMap(  Tools.removeUselessMap((assoc.analyse("plus")) ), 10,  f.toString().substring(0, f.toString().length()-4));
+			//rep += Console.printPythonMap(  Tools.removeUselessMap((assoc.analyse("plus")) ), 10,  f.toString().substring(0, f.toString().length()-4));
 			
 			//rep += "[Politique] : \n"+Console.printMap(assoc.analyse("Politique"))+"\n\n";
 			
-			//rep += Console.printMap( Tools.removeUselessMap(wO.analyse()), 10 )+"\n\n";
+			//rep += Console.printMap( Tools.removeUselessMap(wO.analyse()), 10, Tools.getMaxWords(f.getText()))+"\n\n";
+			
+			/*----------------------TEST ZONE--------------------------*/
+			rep += Console.printMap(Tools.removeUselessMap(dwO.analyse()), 10, Tools.getMaxWords(f.getText()));
 			cpt++;
 		}
 		File f = new File ("RapportAnalyse.txt");

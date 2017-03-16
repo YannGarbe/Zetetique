@@ -22,10 +22,10 @@ public class AnalyseOptionDoubleWordOccurence extends AnalyseOption<Map<String, 
 
 	@Override
 	public Map<String, Integer> analyse() {
-		List <String> liste = Tools.removeUselessBugs(Tools.splitWordsToList(texte.toLowerCase()));
-		
+		//List <String> liste = Tools.removeUselessBugs(Tools.splitWordsToList(texte.toLowerCase()));
+		List <String> liste = Tools.splitWordsToList(texte.toLowerCase());
 		String tmpMot, tmpPrec, tmpSuiv;
-		for(int i=0; i < liste.size(); i++){
+		for(int i=1; i < liste.size()-1; i++){
 			tmpMot = liste.get(i);
 			tmpPrec = liste.get(i - 1);
 			tmpSuiv = liste.get(i + 1);
@@ -41,7 +41,7 @@ public class AnalyseOptionDoubleWordOccurence extends AnalyseOption<Map<String, 
 				map.replace(tmpMot + " " + tmpSuiv, map.get(tmpMot + " " + tmpSuiv) + 1);
 		}
 		
-		Tools.removeBugs(map);
+		//Tools.removeBugs(map);
 		return map;
 	}
 

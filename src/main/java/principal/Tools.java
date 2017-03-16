@@ -89,4 +89,12 @@ public class Tools {
 		return rep;
 	}
 	
+	/**
+	 * Donne le nombre de mots du fichier
+	 * @param s la chaîne de caractère du fichier
+	 * @return le nombre de mots max
+	 */
+	public static int getMaxWords(String s) {
+		return splitWordsToList(s).size();
+	}
 }
