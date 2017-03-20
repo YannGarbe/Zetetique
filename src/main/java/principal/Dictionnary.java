@@ -30,15 +30,21 @@ public class Dictionnary {
 	
 	public static boolean isPronom(String s) {
 		return (s.matches("je|tu|il|elle|on|nous|vous|ils|elles|ce|cette|ces|mon|ton|son|nos|vos|leur|leurs|notre|votre|"
-				+ "ma|ta|sa"));
+				+ "ma|ta|sa|son|ses|mes"));
 	}
 	
 	public static boolean isOther(String s) {
 		return s.matches("aux|au|du|auquel|desquels|duquel|auxquels|afin|ne|est");
 	}
+	
+	public static boolean isTMP (String s) {
+		//return s.matches("plus|pas|sont|tout|tous|entre|aussi|fi|faut|doit|comme|sera");
+		return false;
+	}
 	/*-----------------------------------*/
 	public static boolean isWriggle(String s) {
-		return isPreposition(s) || isConjCoord(s) || isDeter(s) || isQu(s) || isPronom(s) || isOther(s);
+		return isPreposition(s) || isConjCoord(s) || isDeter(s) || isQu(s) || isPronom(s) || isOther(s) || isTMP(s);
+		//return false;
 	}
 	
 	@SuppressWarnings("resource")

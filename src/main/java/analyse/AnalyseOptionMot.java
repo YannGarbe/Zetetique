@@ -1,5 +1,7 @@
 package analyse;
 
+import java.util.List;
+
 import principal.Console;
 import principal.Tools;
 
@@ -31,17 +33,11 @@ public class AnalyseOptionMot extends AnalyseOption<Integer>{
 	
 	public Integer analyse(String mot) {
 		int nbOcc = 0;
-		String [] tab = texte.split(mot+" ", mot.length());
-		nbOcc = tab.length-1;
-		
-		tab = texte.split(" "+mot+" ");
-		nbOcc += tab.length-1;
-		
-		tab = texte.split(" "+mot+".");
-		nbOcc += tab.length-1;
-		
-		tab = texte.split(" "+mot+",");
-		nbOcc += tab.length-1;
+		List <String> liste = Tools.splitWordsToList(texte);
+		for(String s: liste) {
+			if(mot.toLowerCase().equals(s.toLowerCase()))
+				nbOcc++;
+		}
 		
 		return nbOcc;
 	}

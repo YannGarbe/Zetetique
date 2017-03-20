@@ -128,7 +128,7 @@ public class Console
 			Integer j = new Integer(ln.get(i));
 			for(String o : map.keySet()) {
 				if(j.equals(map.get(o)) && cpt < max ) {
-					rep+= "[ '"+o+"' : "+j+" ("+(max*10000)/maxWord+"%°°) ]\n";
+					rep+= "[ '"+o+"' : "+j+" ("+(j*10000)/maxWord+"%°°) ]\n";
 					map.replace(o, -1);
 					cpt++;
 				}
@@ -137,4 +137,34 @@ public class Console
 		}
 		return rep;
 	}
+	
+	public static String printSimpleMap(Map<String, Integer> map, int max) {
+		String rep = "";
+		List<Integer> ln = new ArrayList<Integer>();
+		
+		/*Récupération des valeurs*/
+		for(Integer i : map.values()) {
+			ln.add(i);
+		}
+		/*On trie la liste*/
+		Collections.sort(ln);
+		Collections.reverse(ln);
+		
+		int i = 0;
+		int cpt = 0;
+		
+		while (i < ln.size() && cpt < max) {
+			Integer j = new Integer(ln.get(i));
+			for(String o : map.keySet()) {
+				if(j.equals(map.get(o)) && cpt < max ) {
+					rep+= "[ '"+o+"' : "+j+"]\n";
+					map.replace(o, -1);
+					cpt++;
+				}
+			}
+			i++;
+		}
+		return rep;
+	}
+	
 }

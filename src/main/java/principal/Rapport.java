@@ -23,9 +23,10 @@ public class Rapport {
 		String rep = "";
 		int cpt = 0;
 		/*---------------------------*/
-		//AnalyseOptionAssociation assoc;
-		//AnalyseOptionWordOccurence wO;
-		AnalyseOptionDoubleWordOccurence dwO;
+		AnalyseOptionAssociation assoc;
+		AnalyseOptionWordOccurence wO;
+		//AnalyseOptionDoubleWordOccurence dwO;
+		AnalyseOptionMot m;
 		/*---------------------------*/
 
 		for (GeneralFile f : fc.getFiles()) {
@@ -35,21 +36,22 @@ public class Rapport {
 			rep += "Pour le cas de "+f.toString()+":\n";
 			
 			/*-----------------------------------------------*/
-			//assoc = new AnalyseOptionAssociation(f.getText());
-			//wO = new AnalyseOptionWordOccurence(f.getText());
-			dwO = new AnalyseOptionDoubleWordOccurence(f.getText());
+			assoc = new AnalyseOptionAssociation(f.getText());
+			wO = new AnalyseOptionWordOccurence(f.getText());
+			//dwO = new AnalyseOptionDoubleWordOccurence(f.getText());
+			m = new AnalyseOptionMot(f.getText());
 			/*-----------------------------------------------*/
 			
 			//rep += "[plus] (Sur "+ Tools.getMaxWords(f.getText())+" mots): \n"+Console.printMap(  Tools.removeUselessMap((assoc.analyse("plus")) ), 10, Tools.getMaxWords(f.getText()) )+"\n\n";
 			
 			//rep += Console.printPythonMap(  Tools.removeUselessMap((assoc.analyse("plus")) ), 10,  f.toString().substring(0, f.toString().length()-4));
 			
-			//rep += "[Politique] : \n"+Console.printMap(assoc.analyse("Politique"))+"\n\n";
+			//rep += "[Travail] : \n"+m.analyse("Travail")+" Sur "+Tools.getMaxWords(f.getText())+"\n\n";
 			
-			//rep += Console.printMap( Tools.removeUselessMap(wO.analyse()), 10, Tools.getMaxWords(f.getText()))+"\n\n";
+			//rep += "(Sur "+ Tools.getMaxWords(f.getText())+" mots): \n"+ Console.printMap( Tools.removeUselessMap(wO.analyse()), 10, Tools.getMaxWords(f.getText()))+"\n\n";
 			
 			/*----------------------TEST ZONE--------------------------*/
-			rep += Console.printMap(Tools.removeUselessMap(dwO.analyse()), 10, Tools.getMaxWords(f.getText()));
+			//rep += Console.printMap(Tools.removeUselessMap(dwO.analyse()), 10, Tools.getMaxWords(f.getText()));
 			cpt++;
 		}
 		File f = new File ("RapportAnalyse.txt");
