@@ -29,7 +29,7 @@ public class Dictionnary {
 	}
 	
 	public static boolean isPronom(String s) {
-		return (s.matches("je|tu|il|elle|on|nous|vous|ils|elles|ce|cette|ces|mon|ton|son|nos|vos|leur|leurs|notre|votre|"
+		return (s.matches("je|tu|il|elle|on|nous|vous|ils|elles|ce|cette|ces|ceux|mon|ton|son|nos|vos|leur|leurs|notre|votre|"
 				+ "ma|ta|sa|son|ses|mes"));
 	}
 	
@@ -38,8 +38,8 @@ public class Dictionnary {
 	}
 	
 	public static boolean isTMP (String s) {
-		//return s.matches("plus|pas|sont|tout|tous|entre|aussi|fi|faut|doit|comme|sera");
-		return false;
+		return s.matches("plus|fois|soit|depuis|pas|sont|tout|tous|toutes|entre|aussi|fi|faut|doit|comme|sera|vont|ans|mettre|ont|cela|parmi|peut|contre|seront|ainsi|si|veux|avons|chaque|devons|bien|doivent|moins");
+		//return false;
 	}
 	/*-----------------------------------*/
 	public static boolean isWriggle(String s) {

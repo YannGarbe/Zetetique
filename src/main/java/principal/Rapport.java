@@ -33,7 +33,7 @@ public class Rapport {
 			System.out.println("Fichier '"+f.toString()+"' \t\t ("+cpt+"/"+fc.getFiles().size()+")");
 			
 			f.setPathAnalyse("LesTxt/"+f);
-			rep += "Pour le cas de "+f.toString()+":\n";
+			//rep += "Pour le cas de "+f.toString()+":\n";
 			
 			/*-----------------------------------------------*/
 			assoc = new AnalyseOptionAssociation(f.getText());
@@ -42,11 +42,11 @@ public class Rapport {
 			m = new AnalyseOptionMot(f.getText());
 			/*-----------------------------------------------*/
 			
-			//rep += "[plus] (Sur "+ Tools.getMaxWords(f.getText())+" mots): \n"+Console.printMap(  Tools.removeUselessMap((assoc.analyse("plus")) ), 10, Tools.getMaxWords(f.getText()) )+"\n\n";
+			//rep += "[France] (Sur "+ Tools.getMaxWords(f.getText())+" mots): \n"+Console.printMap(  Tools.removeUselessMap((assoc.analyse("France")) ), 10, Tools.getMaxWords(f.getText()) )+"\n\n";
 			
-			//rep += Console.printPythonMap(  Tools.removeUselessMap((assoc.analyse("plus")) ), 10,  f.toString().substring(0, f.toString().length()-4));
+			rep += Console.printPythonPerCentMap(  Tools.removeUselessMap(wO.analyse()), 10,Tools.getMaxWords(f.getText()),  f.toString().substring(0, f.toString().length()-4));
 			
-			//rep += "[Travail] : \n"+m.analyse("Travail")+" Sur "+Tools.getMaxWords(f.getText())+"\n\n";
+			//rep += "[Femmes] : \n"+m.analyse("Femmes")+" Sur "+Tools.getMaxWords(f.getText())+"\n\n";
 			
 			//rep += "(Sur "+ Tools.getMaxWords(f.getText())+" mots): \n"+ Console.printMap( Tools.removeUselessMap(wO.analyse()), 10, Tools.getMaxWords(f.getText()))+"\n\n";
 			

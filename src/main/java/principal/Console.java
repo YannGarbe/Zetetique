@@ -105,6 +105,39 @@ public class Console
 	}
 	
 	/**
+	 * Permet d'afficher une map selon certaines normes pour un programme python
+	 * @return
+	 */
+	public static String printPythonPerCentMap (Map <String, Integer> map, int max, int maxWord, String nom) {
+		String rep = nom+" ";
+		List<Integer> ln = new ArrayList<Integer>();
+		
+		/*Récupération des valeurs*/
+		for(Integer i : map.values()) {
+			ln.add(i);
+		}
+		/*On trie la liste*/
+		Collections.sort(ln);
+		Collections.reverse(ln);
+		
+		int i = 0;
+		int cpt = 0;
+		
+		while (i < ln.size() && cpt < max) {
+			Integer j = new Integer(ln.get(i));
+			for(String o : map.keySet()) {
+				if(j.equals(map.get(o)) && cpt < max ) {
+					rep+= o+":"+(j*10000)/maxWord+" ";
+					map.replace(o, -1);
+					cpt++;
+				}
+			}
+			i++;
+		}
+		return rep.substring(0, rep.length()-1)+"\n";
+	}
+	
+	/**
 	 * Permet un affichage plus élégant d'une map
 	 * @param map la map à afficher
 	 * @return la chaîne de caractère d'affichage
